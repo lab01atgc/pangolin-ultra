@@ -312,6 +312,7 @@ Guide to build own docker containers from authors of current pangolin containers
 
 Link - https://staphb.org/docker-builds/make_containers/
 
+```dockerfile
 ## Dockerfile for building image
 FROM ubuntu:xenial
 
@@ -384,8 +385,7 @@ RUN /bin/bash -c 'cd .. && \
 WORKDIR /data
 
 RUN pangolin -v && pangolin -lv && pangolin -pv
-
-
+```
 
 
 
