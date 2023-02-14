@@ -16,7 +16,7 @@
 
 ### Note 3: To link the CSV file with the Image ID to release date / pangolin version in the folder there is a file vx_images.txt which links the ID to the Date/Version. Example:
 
-CSV File name - a3a8cd4946ae_lineage_report.csv
+CSV File name - ```a3a8cd4946ae_lineage_report.csv```
 
 | REPOSITORY       | TAG                           | IMAGE ID      | CREATED          | SIZE    |
 |------------------|-------------------------------|---------------|------------------|---------|
