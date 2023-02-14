@@ -47,8 +47,11 @@ This guide provides a solution to these aims.
 
 1. Need a list of all pangolin versions ever released with the version number and release date. Example:
 
-Jul 14, 2022 | pangolin v4.1.2
-Jun 30, 2022 | pangolin v4.1.12. 
+| Date         | Version      |
+| ------------ | ------------ |
+| Jul 14, 2022 | pangolin v4.1.2  |
+| Jun 30, 2022 | pangolin v4.1.12 |
+
 
 
 2. Need all pangolin software versions ever released. As of Oct 11, 2022, there are 88 different releases. (https://github.com/cov-lineages/pangolin/releases)
@@ -96,29 +99,29 @@ Total cost ~ 36 hours x 8$/hour = $288
 
 755,865 sequences x 
 
-3.1.20-pangolearn-2022-02-28
-3.1.20-pangolearn-2022-02-02
-3.1.19-pangolearn-2022-01-20
-3.1.18-pangolearn-2022-01-20
-3.1.17-pangolearn-2022-01-05
-3.1.17-pangolearn-2021-12-06
-3.1.17-pangolearn-2021-11-25
-3.1.16-pangolearn-2021-11-25
-3.1.16-pangolearn-2021-11-18
-3.1.16-pangolearn-2021-11-09
-3.1.16-pangolearn-2021-11-04
-3.1.16-pangolearn-2021-10-18
-3.1.14-pangolearn-2021-10-13
-3.1.14-pangolearn-2021-09-28
-3.1.11-pangolearn-2021-09-17
-3.1.11-pangolearn-2021-08-24
-3.1.11-pangolearn-2021-08-09
-3.1.10-pangolearn-2021-07-28
-3.1.8-pangolearn-2021-07-28
-3.1.7-pangolearn-2021-07-09
-3.1.5-pangolearn-2021-07-07-2
-3.1.5-pangolearn-2021-06-15
-3.0.5-pangolearn-2021-06-05
+- 3.1.20-pangolearn-2022-02-28
+- 3.1.20-pangolearn-2022-02-02
+- 3.1.19-pangolearn-2022-01-20
+- 3.1.18-pangolearn-2022-01-20
+- 3.1.17-pangolearn-2022-01-05
+- 3.1.17-pangolearn-2021-12-06
+- 3.1.17-pangolearn-2021-11-25
+- 3.1.16-pangolearn-2021-11-25
+- 3.1.16-pangolearn-2021-11-18
+- 3.1.16-pangolearn-2021-11-09
+- 3.1.16-pangolearn-2021-11-04
+- 3.1.16-pangolearn-2021-10-18
+- 3.1.14-pangolearn-2021-10-13
+- 3.1.14-pangolearn-2021-09-28
+- 3.1.11-pangolearn-2021-09-17
+- 3.1.11-pangolearn-2021-08-24
+- 3.1.11-pangolearn-2021-08-09
+- 3.1.10-pangolearn-2021-07-28
+- 3.1.8-pangolearn-2021-07-28
+- 3.1.7-pangolearn-2021-07-09
+- 3.1.5-pangolearn-2021-07-07-2
+- 3.1.5-pangolearn-2021-06-15
+- 3.0.5-pangolearn-2021-06-05
 
 
 
@@ -165,20 +168,15 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ```
 
-Pro Tip – 
-
-run this command to avoid having to use sudo for each docker command (make sure restart machine)
+Pro Tip – run this command to avoid having to use sudo for each docker command (make sure restart machine.
 
 ```bash
 sudo gpasswd --add $USER docker
 ```
 
-
-
-
 Download docker containers to machine (https://hub.docker.com/r/staphb/pangolin/tags)
 
-Example with only 1 container (links provided in the Appendix and the above link) 
+**Example with only 1 container (links provided in the Appendix and the above link)***
 
 ```bash
 docker pull staphb/pangolin:3.1.20-pangolearn-2022-02-28
@@ -228,7 +226,7 @@ docker run -itd -v $(pwd):/data 1dacb73e8299 /bin/bash -c "pangolin --outfile 18
 
 
 
-CHECKPOINT: 
+***CHECKPOINT:***
 
 What do we have so far?
 
@@ -285,10 +283,9 @@ Step 4 – Upload the data to Google Cloud Bucket
 gsutil ls gs://
 ```
 
-
 ```bash
 # replace gs://<insert> with your own bucket path
-gsutil cp lineage.csv gs://cdph/
+gsutil cp <file_name> gs://cdph/
 ```
 
 
@@ -390,7 +387,6 @@ RUN pangolin -v && pangolin -lv && pangolin -pv
 ```
 
 
-
 2. General TIPS
 
 Use HTOP to monitor how CPU and RAM usage.
@@ -399,143 +395,43 @@ Use TMUX to safely exit a running process so it does not stop when get disconnec
 
 These can be installed with: 
 
-sudo apt install htop ncdu tmux
+```sudo apt install htop ncdu tmux```
 
 3. Pangolin Docker Links (also included in CSV files in the project folder)
 
-2.4.2-pangolearn-2021-05-19
-docker pull staphb/pangolin:2.4.2-pangolearn-2021-05-19
-2.4.2-pangolearn-2021-05-11
-docker pull staphb/pangolin:2.4.2-pangolearn-2021-05-11
-2.4.2-pangolearn-2021-05-10
-docker pull staphb/pangolin:2.4.2-pangolearn-2021-05-10
-2.4.2-pangolearn-2021-04-28
-docker pull staphb/pangolin:2.4.2-pangolearn-2021-04-28
-2.4.1-pangolearn-2021-04-28
-docker pull staphb/pangolin:2.4.1-pangolearn-2021-04-28
-2.4-pangolearn-2021-04-28
-docker pull staphb/pangolin:2.4-pangolearn-2021-04-28
-2.3.8-pangolearn-2021-04-23
-docker pull staphb/pangolin:2.3.8-pangolearn-2021-04-23
-2.3.8-pangolearn-2021-04-21
-docker pull staphb/pangolin:2.3.8-pangolearn-2021-04-21
-2.3.8-pangolearn-2021-04-14
-docker pull staphb/pangolin:2.3.8-pangolearn-2021-04-14
-2.3.8-pangolearn-2021-04-01
-docker pull staphb/pangolin:2.3.8-pangolearn-2021-04-01
-2.3.6-pangolearn-2021-03-29
-docker pull staphb/pangolin:2.3.6-pangolearn-2021-03-29
-2.3.6-pangolearn-2021-03-16
-docker pull staphb/pangolin:2.3.6-pangolearn-2021-03-16
-2.3.5-pangolearn-2021-03-16
-docker pull staphb/pangolin:2.3.5-pangolearn-2021-03-16
-2.3.4-pangolearn-2021-03-16
-docker pull staphb/pangolin:2.3.4-pangolearn-2021-03-16
-2.3.3-pangolearn-2021-03-16
-docker pull staphb/pangolin:2.3.3-pangolearn-2021-03-16
-2.3.2-pangolearn-2021-02-21
-docker pull staphb/pangolin:2.3.2-pangolearn-2021-02-21
-2.3.0-pangolearn-2021-02-21
-docker pull staphb/pangolin:2.3.0-pangolearn-2021-02-21
-2.3.0-pangolearn-2021-02-18
-docker pull staphb/pangolin:2.3.0-pangolearn-2021-02-18
-2.3.0-pangolearn-2021-02-12
-docker pull staphb/pangolin:2.3.0-pangolearn-2021-02-12
-2.2.2-pangolearn-2021-02-12
-docker pull staphb/pangolin:2.2.2-pangolearn-2021-02-12
-2.2.2-pangolearn-2021-02-11
-docker pull staphb/pangolin:2.2.2-pangolearn-2021-02-11
-2.2.2-pangolearn-2021-02-06
-docker pull staphb/pangolin:2.2.2-pangolearn-2021-02-06
-2.2.1-pangolearn-2021-02-06
-docker pull staphb/pangolin:2.2.1-pangolearn-2021-02-06
-2.1.11-pangolearn-2021-02-05
-docker pull staphb/pangolin:2.1.11-pangolearn-2021-02-05
-2.1.11-pangolearn-2021-02-01
-docker pull staphb/pangolin:2.1.11-pangolearn-2021-02-01
-2.1.10-pangolearn-2021-02-01
-docker pull staphb/pangolin:2.1.10-pangolearn-2021-02-01
-2.1.8-pangolearn-2021-01-22
-docker pull staphb/pangolin:2.1.8-pangolearn-2021-01-22
-2.1.7-pangolearn-2021-01-20
-docker pull staphb/pangolin:2.1.7-pangolearn-2021-01-20
-2.1.7
-docker pull staphb/pangolin:2.1.7
-2.1.6
-docker pull staphb/pangolin:2.1.6
-2.1.3
-docker pull staphb/pangolin:2.1.3
-2.1.1
-docker pull staphb/pangolin:2.1.1
-2.0.5
-docker pull staphb/pangolin:2.0.5
-2.0.4
-docker pull staphb/pangolin:2.0.4
+| Tag                       | Command                                              |
+|---------------------------|------------------------------------------------------|
+| 2.4.2-pangolearn-2021-05-19 | docker pull staphb/pangolin:2.4.2-pangolearn-2021-05-19 |
+| 2.4.2-pangolearn-2021-05-11 | docker pull staphb/pangolin:2.4.2-pangolearn-2021-05-11 |
+| 2.4.2-pangolearn-2021-05-10 | docker pull staphb/pangolin:2.4.2-pangolearn-2021-05-10 |
+| 2.4.2-pangolearn-2021-04-28 | docker pull staphb/pangolin:2.4.2-pangolearn-2021-04-28 |
+| 2.4.1-pangolearn-2021-04-28 | docker pull staphb/pangolin:2.4.1-pangolearn-2021-04-28 |
+| 2.4-pangolearn-2021-04-28   | docker pull staphb/pangolin:2.4-pangolearn-2021-04-28   |
+| 2.3.8-pangolearn-2021-04-23 | docker pull staphb/pangolin:2.3.8-pangolearn-2021-04-23 |
+| 2.3.8-pangolearn-2021-04-21 | docker pull staphb/pangolin:2.3.8-pangolearn-2021-04-21 |
+| 2.3.8-pangolearn-2021-04-14 | docker pull staphb/pangolin:2.3.8-pangolearn-2021-04-14 |
+| 2.3.8-pangolearn-2021-04-01 | docker pull staphb/pangolin:2.3.8-pangolearn-2021-04-01 |
+| 2.3.6-pangolearn-2021-03-29 | docker pull staphb/pangolin:2.3.6-pangolearn-2021-03-29 |
+| 2.3.6-pangolearn-2021-03-16 | docker pull staphb/pangolin:2.3.6-pangolearn-2021-03-16 |
+| 2.3.5-pangolearn-2021-03-16 | docker pull staphb/pangolin:2.3.5-pangolearn-2021-03-16 |
+| 2.3.4-pangolearn-2021-03-16 | docker pull staphb/pangolin:2.3.4-pangolearn-2021-03-16 |
+| 2.3.3-pangolearn-2021-03-16 | docker pull staphb/pangolin:2.3.3-pangolearn-2021-03-16 |
+| 2.3.2-pangolearn-2021-02-21 | docker pull staphb/pangolin:2.3.2-pangolearn-2021-02-21 |
 
-
-
-
-
-3.1.20-pangolearn-2022-02-28
-docker pull staphb/pangolin:3.1.20-pangolearn-2022-02-28
-3.1.20-pangolearn-2022-02-02
-docker pull staphb/pangolin:3.1.20-pangolearn-2022-02-02
-3.1.19-pangolearn-2022-01-20
-docker pull staphb/pangolin:3.1.19-pangolearn-2022-01-20
-3.1.18-pangolearn-2022-01-20
-docker pull staphb/pangolin:3.1.18-pangolearn-2022-01-20
-3.1.17-pangolearn-2022-01-05
-docker pull staphb/pangolin:3.1.17-pangolearn-2022-01-05
-3.1.17-pangolearn-2021-12-06
-docker pull staphb/pangolin:3.1.17-pangolearn-2021-12-06
-3.1.17-pangolearn-2021-11-25
-docker pull staphb/pangolin:3.1.17-pangolearn-2021-11-25
-3.1.16-pangolearn-2021-11-25
-docker pull staphb/pangolin:3.1.16-pangolearn-2021-11-25
-3.1.16-pangolearn-2021-11-18
-docker pull staphb/pangolin:3.1.16-pangolearn-2021-11-18
-3.1.16-pangolearn-2021-11-09
-docker pull staphb/pangolin:3.1.16-pangolearn-2021-11-09
-3.1.16-pangolearn-2021-11-04
-docker pull staphb/pangolin:3.1.16-pangolearn-2021-11-04
-3.1.16-pangolearn-2021-10-18
-docker pull staphb/pangolin:3.1.16-pangolearn-2021-10-18
-3.1.14-pangolearn-2021-10-13
-docker pull staphb/pangolin:3.1.14-pangolearn-2021-10-13
-3.1.14-pangolearn-2021-09-28
-docker pull staphb/pangolin:3.1.14-pangolearn-2021-09-28
-3.1.11-pangolearn-2021-09-17
-docker pull staphb/pangolin:3.1.11-pangolearn-2021-09-17
-3.1.11-pangolearn-2021-08-24
-docker pull staphb/pangolin:3.1.11-pangolearn-2021-08-24
-3.1.11-pangolearn-2021-08-09
-docker pull staphb/pangolin:3.1.11-pangolearn-2021-08-09
-3.1.10-pangolearn-2021-07-28
-docker pull staphb/pangolin:3.1.10-pangolearn-2021-07-28
-3.1.8-pangolearn-2021-07-28
-docker pull staphb/pangolin:3.1.8-pangolearn-2021-07-28
-3.1.7-pangolearn-2021-07-09
-docker pull staphb/pangolin:3.1.7-pangolearn-2021-07-09
-3.1.5-pangolearn-2021-07-07-2
-docker pull staphb/pangolin:3.1.5-pangolearn-2021-07-07-2
-3.1.5-pangolearn-2021-06-15
-docker pull staphb/pangolin:3.1.5-pangolearn-2021-06-15
-3.0.5-pangolearn-2021-06-05
-docker pull staphb/pangolin:3.0.5-pangolearn-2021-06-05
-
-4.1.3-pdata-1.15.1	docker pull staphb/pangolin:4.1.3-pdata-1.15.1	Oct 12, 2022 at 6:15 am
-4.1.2-pdata-1.14	docker pull staphb/pangolin:4.1.2-pdata-1.14	Sep 1, 2022 at 1:22 pm
-4.1.2-pdata-1.13	docker pull staphb/pangolin:4.1.2-pdata-1.13	Aug 12, 2022 at 9:45 am
-4.1.2-pdata-1.12	docker pull staphb/pangolin:4.1.2-pdata-1.12	Jul 14, 2022 at 4:46 pm
-4.1.1-pdata-1.11	docker pull staphb/pangolin:4.1.1-pdata-1.11	Jul 1, 2022 at 12:01 pm
-4.0.6-pdata-1.9	docker pull staphb/pangolin:4.0.6-pdata-1.9	Jun 2, 2022 at 12:40 pm
-4.0.6-pdata-1.8-constellations-0.1.10	docker pull staphb/pangolin:4.0.6-pdata-1.8-constellations-0.1.10	May 13, 2022 at 9:51 am
-4.0.6-pdata-1.8	docker pull staphb/pangolin:4.0.6-pdata-1.8	Apr 29, 2022 at 12:55 pm
-4.0.6-pdata-1.6	docker pull staphb/pangolin:4.0.6-pdata-1.6	Apr 22, 2022 at 9:45 am
-4.0.5-pdata-1.3	docker pull staphb/pangolin:4.0.5-pdata-1.3	Apr 12, 2022 at 9:28 am
-4.0.4-pdata-1.2.133	docker pull staphb/pangolin:4.0.4-pdata-1.2.133	Apr 8, 2022 at 7:11 am
-4.0.3-pdata-1.2.133	docker pull staphb/pangolin:4.0.3-pdata-1.2.133	Apr 7, 2022 at 1:17 pm
-4.0.2-pdata-1.2.133	docker pull staphb/pangolin:4.0.2-pdata-1.2.133	Apr 6, 2022 at 1:30 pm
-4.0.1	docker pull staphb/pangolin:4.0.1	Apr 4, 2022 at 2:54 pm
-4.0.0	docker pull staphb/pangolin:4.0	Apr 1, 2022 at 6:27 pm
+| Version                      | Command                                          | Date                   |
+|------------------------------|--------------------------------------------------|------------------------|
+| 4.1.3-pdata-1.15.1           | docker pull staphb/pangolin:4.1.3-pdata-1.15.1    | Oct 12, 2022 at 6:15 am |
+| 4.1.2-pdata-1.14             | docker pull staphb/pangolin:4.1.2-pdata-1.14      | Sep 1, 2022 at 1:22 pm  |
+| 4.1.2-pdata-1.13             | docker pull staphb/pangolin:4.1.2-pdata-1.13      | Aug 12, 2022 at 9:45 am |
+| 4.1.2-pdata-1.12             | docker pull staphb/pangolin:4.1.2-pdata-1.12      | Jul 14, 2022 at 4:46 pm |
+| 4.1.1-pdata-1.11             | docker pull staphb/pangolin:4.1.1-pdata-1.11      | Jul 1, 2022 at 12:01 pm |
+| 4.0.6-pdata-1.9              | docker pull staphb/pangolin:4.0.6-pdata-1.9       | Jun 2, 2022 at 12:40 pm |
+| 4.0.6-pdata-1.8-constellations-0.1.10 | docker pull staphb/pangolin:4.0.6-pdata-1.8-constellations-0.1.10 | May 13, 2022 at 9:51 am |
+| 4.0.6-pdata-1.8              | docker pull staphb/pangolin:4.0.6-pdata-1.8       | Apr 29, 2022 at 12:55 pm |
+| 4.0.6-pdata-1.6              | docker pull staphb/pangolin:4.0.6-pdata-1.6       | Apr 22, 2022 at 9:45 am |
+| 4.0.5-pdata-1.3              | docker pull staphb/pangolin:4.0.5-pdata-1.3       | Apr 12, 2022 at 9:28 am |
+| 4.0.4-pdata-1.2.133          | docker pull staphb/pangolin:4.0.4-pdata-1.2.133   | Apr 8, 2022 at 7:11 am  |
+| 4.0.3-pdata-1.2.133          | docker pull staphb/pangolin:4.0.3-pdata-1.2.133   | Apr 7, 2022 at 1:17 pm  |
+| 4.0.2-pdata-1.2.133          | docker pull staphb/pangolin:4.0.2-pdata-1.2.133   | Apr 6, 2022 at 1:30 pm  |
+| 4.0.1                        | docker pull staphb/pangolin:4.0.1                | Apr 4, 2022 at 2:54
 
