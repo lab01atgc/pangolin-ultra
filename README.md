@@ -241,14 +241,14 @@ We can write a script where we loop over each IMAGE_ID (TAG or docker container 
 For example, as one docker container completes running say 2.3.6-pangolearn-2021-03-16 it will output the lineage call and continue to the next container in sequence like 3.1.20-pangolearn-2022-02-28 and repeat for all containers. 
 
 
-Step 1 – Generate container IDs to generate job start commands and CSV files names
+***Step 1 – Generate container IDs to generate job start commands and CSV files names***
 
 ```bash
 # grab all container ID and write them to file ids.txt 
 docker images | awk '{print $3}' | tail -n +2 > ids.txt 
 ```
 
-Step 2 – Python script will loop over ID file from Step1 and generate custom compute commands. (If want to run on a different FASTA file or change parameters for PANGOLIN this is where you would make changes and it will generate commands for all containers at once). 
+**Step 2 – Python script will loop over ID file from Step1 and generate custom compute commands. (If want to run on a different FASTA file or change parameters for PANGOLIN this is where you would make changes and it will generate commands for all containers at once).***
 
 NOTE: Need to run python script in same directory as previous ids.txt file. 
 
@@ -268,7 +268,7 @@ for i in data:  pango.append(str('docker run -itd -v /home/project_cdph_1://data
   fhandle.write(f'{line}\n')
 ```
 
-Step 3 – run pango.sh which will start all containers
+***Step 3 – run pango.sh which will start all containers***
 
 ```bash
 bash pango.sh 
@@ -276,7 +276,7 @@ bash pango.sh
 
 
 
-Step 4 – Upload the data to Google Cloud Bucket 
+***Step 4 – Upload the data to Google Cloud Bucket***
 
 ```bash
 # Lists all current files in your google bucket
@@ -389,9 +389,9 @@ RUN pangolin -v && pangolin -lv && pangolin -pv
 
 2. General TIPS
 
-Use HTOP to monitor how CPU and RAM usage.
-Use NCDU to monitor disk usage. 
-Use TMUX to safely exit a running process so it does not stop when get disconnected from terminal or other issues leading to loss of connection. 
+- Use HTOP to monitor how CPU and RAM usage.
+- Use NCDU to monitor disk usage. 
+- Use TMUX to safely exit a running process so it does not stop when get disconnected from terminal or other issues leading to loss of connection. 
 
 These can be installed with: 
 
