@@ -189,11 +189,12 @@ docker pull --all-tags staphb/pangolin
 
 ```bash
 docker images
-```
 
 EPOSITORY        TAG                          IMAGE ID      CREATED        SIZE
 staphb/pangolin  3.1.20-pangolearn-2022-02-28 1dacb73e8299  5 months ago   2.1GB
 staphb/pangolin  2.3.6-pangolearn-2021-03-16  f9022682f004  16 months ago  2.5GB
+
+```
 
 Note: Steps 1 and 2 can be skipped and go straight to Step 3
 
