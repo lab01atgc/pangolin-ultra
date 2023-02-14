@@ -18,9 +18,10 @@
 
 CSV File name - a3a8cd4946ae_lineage_report.csv
 
-REPOSITORY        TAG                            IMAGE ID       CREATED         SIZE
-staphb/pangolin   2.4.2-pangolearn-2021-05-19    a3a8cd4946ae   18 months ago   2.35GB
-staphb/pangolin   2.4.2-pangolearn-2021-05-11    85924ba86045   18 months ago   2.36GB
+| REPOSITORY       | TAG                           | IMAGE ID      | CREATED          | SIZE    |
+|------------------|-------------------------------|---------------|------------------|---------|
+| staphb/pangolin  | 2.4.2-pangolearn-2021-05-19   | a3a8cd4946ae  | 18 months ago    | 2.35GB  |
+| staphb/pangolin  | 2.4.2-pangolearn-2021-05-11   | 85924ba86045  | 18 months ago    | 2.36GB  |
 
 
 ### Note 3: NOT COVERED HERE - Steps to go from downloading the RAW data from GISAID with all global data and filtering only CA sequences. This was done by following steps from the NextStrain Team. 
